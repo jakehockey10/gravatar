@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Md5 = (function () {
+var Md5 = /** @class */ (function () {
     function Md5() {
         this._state = new Int32Array(4);
         this._buffer = new ArrayBuffer(68);
@@ -334,15 +334,15 @@ var Md5 = (function () {
         Md5._md5cycle(this._state, buf32);
         return raw ? this._state : Md5._hex(this._state);
     };
+    // Private Static Variables
+    Md5.stateIdentity = new Int32Array([1732584193, -271733879, -1732584194, 271733878]);
+    Md5.buffer32Identity = new Int32Array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    Md5.hexChars = '0123456789abcdef';
+    Md5.hexOut = [];
+    // Permanent instance is to use for one-call hashing
+    Md5.onePassHasher = new Md5();
     return Md5;
 }());
-// Private Static Variables
-Md5.stateIdentity = new Int32Array([1732584193, -271733879, -1732584194, 271733878]);
-Md5.buffer32Identity = new Int32Array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
-Md5.hexChars = '0123456789abcdef';
-Md5.hexOut = [];
-// Permanent instance is to use for one-call hashing
-Md5.onePassHasher = new Md5();
 exports.Md5 = Md5;
 if (Md5.hashStr('hello') !== '5d41402abc4b2a76b9719d911017c592') {
     console.error('Md5 self test failed.');

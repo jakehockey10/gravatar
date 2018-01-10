@@ -2,19 +2,20 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "rootDir": ".",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "module": "commonjs",
+    "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
-    "rootDir": ".",
+    "module": "commonjs",
+    "target": "es5",
+    "types": [],
     "sourceMap": true,
     "inlineSources": true,
-    "target": "es5",
+    "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "lib": [
-        "es2015",
-        "dom"
-    ],
+    "outDir": "./bundles",
+    "lib": ["es5", "dom", "es2015.promise", "es2015.collection", "es2015.iterable"],
     "paths": {
       "@angular/*": [
         "../../../node_modules/@angular/*"

@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var gravatar_constants_1 = require("./gravatar.constants");
 var md5_1 = require("./md5");
-var GravatarService = (function () {
+var GravatarService = /** @class */ (function () {
     function GravatarService() {
     }
     /**
@@ -27,10 +27,10 @@ var GravatarService = (function () {
         var emailHash = md5_1.Md5.hashStr(email.toLowerCase());
         return "//www.gravatar.com/avatar/" + emailHash + "?s=" + size + "&d=" + fallback;
     };
+    GravatarService = __decorate([
+        core_1.Injectable()
+    ], GravatarService);
     return GravatarService;
 }());
-GravatarService = __decorate([
-    core_1.Injectable()
-], GravatarService);
 exports.GravatarService = GravatarService;
 //# sourceMappingURL=gravatar.service.js.map

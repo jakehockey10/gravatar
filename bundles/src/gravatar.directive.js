@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var gravatar_constants_1 = require("./gravatar.constants");
 var gravatar_service_1 = require("./gravatar.service");
-var GravatarDirective = (function () {
+var GravatarDirective = /** @class */ (function () {
     function GravatarDirective(elementRef, _gravatar) {
         this.elementRef = elementRef;
         this._gravatar = _gravatar;
@@ -28,25 +28,25 @@ var GravatarDirective = (function () {
     GravatarDirective.prototype.setSrcUrl = function () {
         this.elementRef.nativeElement.src = this._gravatar.url(this.email, this.size, this.fallback);
     };
+    __decorate([
+        core_1.Input('email'),
+        __metadata("design:type", String)
+    ], GravatarDirective.prototype, "email", void 0);
+    __decorate([
+        core_1.Input('size'),
+        __metadata("design:type", Number)
+    ], GravatarDirective.prototype, "size", void 0);
+    __decorate([
+        core_1.Input('fallback'),
+        __metadata("design:type", String)
+    ], GravatarDirective.prototype, "fallback", void 0);
+    GravatarDirective = __decorate([
+        core_1.Directive({
+            selector: '[gravatar]'
+        }),
+        __metadata("design:paramtypes", [core_1.ElementRef, gravatar_service_1.GravatarService])
+    ], GravatarDirective);
     return GravatarDirective;
 }());
-__decorate([
-    core_1.Input('email'),
-    __metadata("design:type", String)
-], GravatarDirective.prototype, "email", void 0);
-__decorate([
-    core_1.Input('size'),
-    __metadata("design:type", Number)
-], GravatarDirective.prototype, "size", void 0);
-__decorate([
-    core_1.Input('fallback'),
-    __metadata("design:type", String)
-], GravatarDirective.prototype, "fallback", void 0);
-GravatarDirective = __decorate([
-    core_1.Directive({
-        selector: '[gravatar]'
-    }),
-    __metadata("design:paramtypes", [core_1.ElementRef, gravatar_service_1.GravatarService])
-], GravatarDirective);
 exports.GravatarDirective = GravatarDirective;
 //# sourceMappingURL=gravatar.directive.js.map
